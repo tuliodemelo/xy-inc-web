@@ -34,3 +34,4 @@ $ npm install
 ```sh
 $ node zup.js
 ```
+* Acesse o aplicativo http://localhost:3000/app
