@@ -1,4 +1,4 @@
-# XY Inc Localization App (xy-inc-web)
+# XY Inc POI Localization App (xy-inc-web)
 
 ### O Projeto
 
@@ -6,22 +6,26 @@ Single Page Application desenvolvida para permitir o cadastro, visualização e 
 
 ### Tecnologias utilizadas
 
-O projeto foi desenvolvido dentro de padrões modernos para front-end utilizando tecnologias modernas. São elas:
+O projeto foi desenvolvido dentro de padrões modernos para front-end utilizando tecnologias open-source. São elas:
 
 * HTML5
 * JavaScript
-* jQuery
 * CSS
-* Bootstrap - Componentes visuais
-* [Gulp JS] - Automatização de tarefas como minificação js
+* jQuery
+* Bootstrap - Componentes visuais - http://getbootstrap.com/
+* [Gulp Js] - Automatização de tarefas como minificação js - http://gulpjs.com/
 * [node.js] - API Restful desenvolvida utilizando node js com os módulos restify (REST) e mongoose (MongoDB).
-* MongoDB - Banco de Dados NOSQL para persistência e rápida consulta de informações
+* [MongoDB] - Banco de Dados NoSQL para persistência e rápida consulta de informações.
 
 ### Preparação de Ambiente
 
 * Instale o NodeJS conforme instruções para sua plataforma - https://nodejs.org/
 * Instale o MongoDB conforme instruções para sua plataforma - https://www.mongodb.org/
-* É necessária a onexão e inicialização do Mongo
+* É necessária a conexão e inicialização do Mongo. Ex para Windows:
+
+```sh
+$ mongod.exe --dbpath C:\Program Files\MongoDB\data
+```
 
 ### Instalação
 

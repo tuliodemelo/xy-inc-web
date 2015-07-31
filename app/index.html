@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		
+		<meta charset="utf-8" />
+		<meta name="robots" content="noindex, nofollow" />
+		
+		<title>XY Inc Localization App</title>
+		
+		<!-- css: plugin: Bootstrap 3.3.5 - http://getbootstrap.com/ --> 
+        <link rel="stylesheet" href="./app/plugins/bootstrap/css/bootstrap.min.css" />
+        
+        <!-- css: App --> 
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+        <link rel="stylesheet" href="./app/css/app.min.css" />
+        
+        <script src="app/js/modernizr.custom.js"></script>
+
+    </head>
+
+	<body>
+        
+        <ul class="menu">
+            <li>
+                <a href="/app" class="glyphicon glyphicon-heart-empty">XY Inc</a>
+            </li>
+            <li>
+                <a href="javascript://" data-pagina="paginaCadastroPOI" class="glyphicon glyphicon-plus" title="Cadastrar POI">Cadastrar POI</a>
+            </li>
+            <li>
+                <a id="menuMeusPois" href="javascript://" data-pagina="paginaMeusPOIS" class="glyphicon glyphicon-map-marker" title="Meus POIs">Meus POIs</a>
+            </li>
+            <li>
+                <a href="javascript://" data-pagina="paginaPOISProximos" class="glyphicon glyphicon-search" title="POIS Próximos">POIS Próximos</a>
+            </li>
+        </ul>
+        
+        <div class="main">
+            
+            <!-- Seção Apresentação -->
+            <section id="apresentacao">
+                <div>
+                    <p>
+                        Seja bem vindo(a) ao POI Single Page Application da XY Inc desenvolvido com excelentes padrões
+                        de front-end e tecnologias robustas, modernas e open-source tais como NodeJS e MongoDB.
+                        <br>
+                        Autor: Tulio de Melo
+                    </p>
+                </div>
+            </section>
+
+            <!-- Seção Cadastro de POI -->
+            <section id="paginaCadastroPOI" class="pagina">
+                
+                <h2>Cadastrar POI</h2>
+
+                <p>Cadastre os seus pontos de interesse.</p>
+                
+                <div class="msgClientSide"></div>
+                
+                <form id="formCadastrarPoi" method="post" action="">
+
+                    <div class="form-group">
+                        <label class="sr-only" for="nomePoi">Nome do POI</label>
+                        <input type="text" id="nomePoi" name="nomePoi" value="" maxlength="50" placeholder="Nome do POI" class="form-control" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="coordenadaX">Coordenada X</label>
+                        <input type="text" id="coordenadaX" name="coordenadaX" value="" maxlength="2" placeholder="Coordenada X" class="form-control numero" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="coordenadaY">Coordenada Y</label>
+                        <input type="text" id="coordenadaY" name="coordenadaY" value="" maxlength="2" placeholder="Coordenada Y" class="form-control numero" />
+                    </div>
+                    
+                    <input type="submit" id="btnCadastrarPoi" value="Salvar" class="btn btn-primary" />
+
+                </form>
+            </section>
+            
+            <!-- Seção Listagem de POIs -->
+            <section id="paginaMeusPOIS" class="pagina">
+                
+                <h2>Meus POIs</h2>
+                
+                <p>Veja os POIs cadastrados por você!</p>
+                
+                <div class="msgClientSide"></div>
+                
+                <div class="listaPois">
+                    <table id="tableMeusPois" class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>POIS</th>
+                                <th>Coordenada X</th>
+                                <th>Coordenada Y</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="noPois"><p>No momento você não possui pois cadastrados.</p></div>
+                
+            </section>
+
+            <!-- Seção Pesquisa de POIs -->
+            <section id="paginaPOISProximos" class="pagina">
+                
+                <h2>POIs próximos</h2>
+                
+                <p>Veja quais dos seus pontos de interesse estão pertos de você.</p>
+                
+                <div class="msgClientSide"></div>
+                
+                <form id="formPesquisaPoi" method="post" action="" class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="coordenadaX">Coordenada X</label>
+                        <input type="text" id="coordenadaXPesq" name="coordenadaXPesq" value="" maxlength="2" placeholder="Coordenada X" class="form-control numero" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="coordenadaY">Coordenada Y</label>
+                        <input type="text" id="coordenadaYPesq" name="coordenadaYPesq" value="" maxlength="2" placeholder="Coordenada Y" class="form-control numero" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="coordenadaY">Distância máxima em metros</label>
+                        <input type="text" id="dmaxPesq" name="dmaxPesq" value="" maxlength="2" placeholder="Distância máxima (m)" class="form-control numero" />
+                    </div>
+
+                    <button id="btnPesquisaPois" type="submit" class="btn btn-default">Encontrar</button>
+                </form>
+                
+                <div class="resultadoPesquisa">
+                    <table id="tableMeusPoisProximos" class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>POIS</th>
+                                <th>Coordenada X</th>
+                                <th>Coordenada Y</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </section>
+            
+        </div>
+        
+        <!-- js: plugin: jQuery 1.11.3 - http://jquery.com/ -->
+        <script src="app/plugins/jquery/jquery-1.11.3.min.js"></script>
+        
+        <!-- js: plugin: jQuery Mask - https://github.com/igorescobar/jQuery-Mask-Plugin -->
+        <script src="app/plugins/jquery/jquery.mask.min.js"></script>
+        
+        <!-- js: plugin: Bootstrap 3.3.5 - http://getbootstrap.com/ -->
+        <script src="app/plugins/bootstrap/js/bootstrap.min.js"></script>
+        
+        <!-- js: app -->
+        <script src="app/js/app.min.js"></script>
+		
+	</body>
+
+</html>
