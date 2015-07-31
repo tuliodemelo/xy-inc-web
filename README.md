@@ -19,15 +19,18 @@ O projeto foi desenvolvido dentro de padrões modernos para front-end utilizando
 
 ### Preparação de Ambiente
 
-* Instale o NodeJS conforme instruções para sua pltaforma - https://nodejs.org/
-* Instale o MongoDB conforme instruções para sua pltaforma - https://www.mongodb.org/
-* 
+* Instale o NodeJS conforme instruções para sua plataforma - https://nodejs.org/
+* Instale o MongoDB conforme instruções para sua plataforma - https://www.mongodb.org/
+* É necessária a onexão e inicialização do Mongo
+
 ### Instalação
 
 * Acesse o diretório onde os fontes foram clonados
 * Carregue os módulos nodejs necessários ao funcionamento da aplicação web utilizando o comando a seguir, o qual gerará a pasta node_modules
-
 ```sh
 $ npm install
 ```
-
+* Rode o aplicativo com apenas um comando shell
+```sh
+$ node zup.js
+```
